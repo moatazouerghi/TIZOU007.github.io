@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | OUERGHI moataz bellah" description="About OUERGHI moataz bellah Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Découvrez mon parcours et mes compétences."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/portraitMoataz.jpg"
+					alt="Jeanine White at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Parcours</h2>
+				<div class="content">
+					<p>
+						Je suis Moataz Bellah Ouerghi, actuellement étudiant en Master en Développement Logiciel et Nouvelles Technologies à l'Institut Supérieur d'Informatique. 
+						j'ai obtenu ma licence en développement de systèmes d'information de l'Institut Supérieur des Études Technologiques de Bizerte en Tunisie. J'ai également une expérience en tant qu' IT Administrator chez EIDST, où j'ai travaillé sur le support technique, les migrations et l'infrastructure matérielle et logicielle. Depuis 2022, je suis développeur Fullstack chez Digixis, une startup spécialisée en PHP, collaborant avec la société française Hipto pour la génération de leads qualifiés via des systèmes d'intelligence artificielle. Parallèlement, j'ai réalisé des projets freelance en PHP et en Symfony.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Éducation</h2>
+				<div class="content">
+					<p>Licence en développement de systèmes d'information, Institut Supérieur des Études Technologiques de Bizerte (2018)</p>
+					<p>Étudiant en Master en Développement Logiciel et Nouvelles Technologies, Institut Supérieur d'Informatique</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences</h2>
+				<div class="content">
+					<p>Développement Fullstack, Support technique, Migration, Infrastructure matérielle et logicielle, PHP, Symfony, Laravel, Codeigniter 3/4, MySql, NoSql, JS, Jquery, Ajax, Angular, Scrum, UML, Intelligence Artificielle</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Coordonnées</h2>
+				<div class="content">
+					<p>Adresse E-mail      : MO3TAZ.WERGHI@gmail.com</p>
+					<p>LinkedIn            : <a href="https://www.linkedin.com/in/moataz-bellah-ouerghi-50801013a/"> moataz bellah OUERGHI</a></p>
+					<p>Numéro de téléphone : +216 98 988 667</p>
+				</div>
+			</section>
+			
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
