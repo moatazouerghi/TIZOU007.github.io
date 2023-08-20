@@ -1,8 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  buildOptions: {
-    basePath: 'https://TIZOU007.github.io/'
-  }
-});
-
+  site: 'https://TIZOU007.github.io',
+  base: '/TIZOU007',
+})
